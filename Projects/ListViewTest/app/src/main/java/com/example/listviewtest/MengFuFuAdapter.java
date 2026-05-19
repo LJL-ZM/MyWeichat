@@ -22,11 +22,24 @@ public class MengFuFuAdapter extends ArrayAdapter<MengFuFu> {
 
     public View getView(int position, View convertView, ViewGroup parent){
         MengFuFu mengfufu = getItem(position);
-        View view = LayoutInflater.from(getContext()).inflate(resourceId, parent, false);
-        ImageView mengFuFuImage = (ImageView) view.findViewById(R.id.mengfufu_image);
-        TextView textView = (TextView) view.findViewById(R.id.mengfufu_name);
-        mengFuFuImage.setImageResource(mengfufu.getImageId());
-        textView.setText(mengfufu.getName());
+        View view;
+        ViewHolder viewHolder;
+        if(convertView == null){
+            view = LayoutInflater.from(getContext()).inflate(resourceId, parent, false);
+            viewHolder = new ViewHolder();
+            viewHolder.imageView = (ImageView) view.findViewById(R.id.mengfufu_image);
+            viewHolder.textView = (TextView) view.findViewById(R.id.mengfufu_name);
+            view.setTag(viewHolder);
+        } else {
+            view = convertView;
+            viewHolder = (ViewHolder) view.getTag();
+        }
+        viewHolder.textView.setText(mengfufu.getName());
+        viewHolder.imageView.setImageResource(mengfufu.getImageId());
         return view;
+    }
+    class ViewHolder{
+        ImageView imageView;
+        TextView textView;
     }
 }

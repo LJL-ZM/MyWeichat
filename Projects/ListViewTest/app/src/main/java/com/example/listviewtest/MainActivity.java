@@ -1,7 +1,12 @@
 package com.example.listviewtest;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Adapter;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import androidx.activity.EdgeToEdge;
@@ -23,6 +28,20 @@ public class MainActivity extends AppCompatActivity {
         MengFuFuAdapter ad = new MengFuFuAdapter(MainActivity.this, R.layout.mengfufu_item, mengList);
         ListView listView = (ListView) findViewById(R.id.list_view);
         listView.setAdapter(ad);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                MengFuFu mengFuFu = mengList.get(position);
+//                setContentView(R.layout.mengfufu_image);
+//                ImageView imageView = (ImageView) findViewById(R.id.image_id);
+//                imageView.setImageResource(mengFuFu.getImageId());
+                MengFuFu mengFuFu = mengList.get(position);
+                Intent intent = new Intent(MainActivity.this, ItemViewActivity.class);
+                intent.putExtra("imageId", mengFuFu.getImageId());
+                intent.putExtra("name", mengFuFu.getName());
+                startActivity(intent);
+            }
+        });
     }
     private void init(){
         for(int i = 0; i < 4; i++){
