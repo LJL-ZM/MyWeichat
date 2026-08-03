@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#2178DD"
+        android:titleTextColor="#ffffff"/>
+
+    <EditText
+        android:id="@+id/et_group_name"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="请输入群名称"
+        android:paddingHorizontal="16dp"
+        android:background="#ffffff"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="16dp"
+        android:text="选择群成员"
+        android:textSize="13sp"
+        android:textColor="#666666"
+        android:background="#F5F7FA"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_friends"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <Button
+        android:id="@+id/btn_create"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#2178DD"
+        android:text="创建群聊"
+        android:textColor="#ffffff"
+        android:textSize="16sp"/>
+</LinearLayout>
