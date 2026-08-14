@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name" translatable="false">SecondApplication</string>
+    <string name="text_msg" translatable="false">this is a message</string>
+    <string name="btn_1" translatable="false">button</string>
+</resources>

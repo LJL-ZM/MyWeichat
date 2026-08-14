@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">LocalizationTest</string>
+    <string name="text_msg">this is a message</string>
+    <string name="btn_msg">button</string>
+</resources>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SecondApplication</string>
+    <string name="text_msg">这是一条消息</string>
+    <string name="btn_1">按钮</string>
+</resources>
